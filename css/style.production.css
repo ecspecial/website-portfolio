@@ -25,6 +25,11 @@ body {
   color: #2b2b2b;
 }
 
+main {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
 h1 {
   font-size: 30px;
   font-weight: 700;
@@ -166,7 +171,6 @@ a.button:visited {
 
 /*Set body as a flex and align its content in column; set body's min-height to take all space of viewport*/
 body {
-  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -174,11 +178,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  min-height: 100vh;
 }
 
-  img.page-logo {
-    height: undefined;
-    width: auto;
+img.page-logo {
+  height: undefined;
+  width: auto;
 }
 
 /*Make header a flex*/
