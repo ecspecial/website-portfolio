@@ -39,6 +39,10 @@ body {
   color: var(--text-main-color);
 }
 
+main {
+  flex-shrink: 0;
+}
+
 h1 {
   font-size: 30px;
   font-weight: var(--h-font-weight);
@@ -126,14 +130,14 @@ a.button:visited {
 
 /*Set body as a flex and align its content in column; set body's min-height to take all space of viewport*/
 body {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
-  img.page-logo {
-    height: var(--page-logo-header);
-    width: auto;
+img.page-logo {
+  height: var(--page-logo-header);
+  width: auto;
 }
 
 /*Make header a flex*/
