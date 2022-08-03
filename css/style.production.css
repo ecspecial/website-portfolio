@@ -243,6 +243,9 @@ body {
 .profile__portrait {
   display: inline-block;
   width: 200px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   margin-right: 50px;
   border-radius: 50%;
 }
@@ -471,6 +474,18 @@ table {
   .project-grid {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
+  }
+  .navigation-list {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align:start;
+        -ms-flex-align:start;
+            align-items:flex-start;
   }
 }
 
