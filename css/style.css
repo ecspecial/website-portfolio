@@ -1,369 +1,556 @@
-/*
-Colors used
+/**
+@credit for colors
+https://www.freecodecamp.org/news/create-a-portfolio-website-using-html-css-javascript/
+**/
 
-Text color (Dark Gray): #2b2b2b;
-Text color (White): #FFFFFF;
-Border and footer color (Grey): #dcdcdc;
-Link color (Blue): #0000EE;
-Active link color (Red): #EE0000;
-Visited link color (Purple): #551A8B;
-Button color (Green): #357b70;
-Footer color (Light Gray): #d8d8d8;
-Flex border color (Gray): #dcdcdc;
-Grid color (Medium Gray): #F2F2F2;
+/*
+===============================================================================
+=== variables
+===============================================================================
  */
 
-/*
-Sets styling for the whole html body
-*/
-
-:root {
-  --text-main-color: #2b2b2b;
-  --a-visited-color: #551A8B;
-  --a-hover-color: #0000EE;
-  --a-active-color: #EE0000;
-  --h-font-weight: 700;
-  --button-color: #357b70;
-  --button-text-color: #FFFFFF;
-  --page-logo-height: 60px;
-  --footer-color: #d8d8d8;
-  --content-border-color: #dcdcdc;
-  --grid-color: #F2F2F2;
-}
-
-body {
-  font-family: 'Lato' sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--text-main-color);
-}
-
-main {
-  flex-shrink: 0;
-}
-
-h1 {
-  font-size: 30px;
-  font-weight: var(--h-font-weight);
-}
-
-h2 {
-  font-size: 24px;
-  font-weight: var(--h-font-weight);
-}
-
-h3{
-  font-size: 18px;
-  font-weight: var(--h-font-weight);
+ :root {
+  --black: #191d2b;
+  --gunmetal: #2a2e35;
+  --yellow: #f3d68a;
+  --orange: #d24f46;
+  --go-blue: #3f84e4;
+  --cultured: #f8f8f8;
+  --color-grey-1: #dbe1e8;
+  --color-grey-2: #b2becd;
+  --color-grey-3: #6c7983;
+  --color-grey-4: #454e56;
+  --color-grey-5: #2a2e35;
+  --font-size: 1.3rem;
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Poppins', sans-serif;
 }
 
 /*
-Creates link stylings with different stylings for normal, hover, active, and visited states
-*/
-a {
-  color: var(--text-main-color);
-  transition: color 0.2s, font-size 0.2s, font-weight 0.2s;
-}
+===============================================================================
+=== border-box
+===============================================================================
+ */
 
-a:visited {
-  text-decoration: none;
-  color: var(--a-visited-color);
-}
-
-a:hover, a:focus {
-  text-decoration: none;
-  color: var(--a-hover-color);
-  font-size: 18px;
-  font-weight: 400;
-}
-
-a:active {
-  color: var(--a-active-color);
-}
-
-button, .button {
-  /* overwrites browser defaults and resets the border */
-  border: none;
-  /* takes the font from the outer container */
-  font-family: inherit;
-  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-  background-color: var(--button-color);
-  color: var(--button-text-color);
-  /* adds spacing to the button */
-  padding: 10px;
-  border-radius: 10px;
-  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
-  border-bottom: 5px solid rgba(0, 0, 0, 0.3);
-  transition: opacity 0.2s;
-}
-
-/*   button:hover {
-  /* lets the mouse appear as a hand when hovering over the button
-  cursor: pointer;
-  /* reduces the opacity of the button to 80%
-  opacity: 0.8;
-}
-*/
-
-button:hover,
-.button:active,
-.button:hover,
-.button:visited {
-  color: var(--button-text-color);
-  /* lets the mouse appear as a hand when hovering over the button */
-  cursor: pointer;
-  /* reduces the opacity of the button to 80% */
-  opacity: 0.8;
-  font-size: 16px;
-}
-
-a.button,
-a.button:visited {
-  text-decoration: none;
-  font-size: 16px;
-}
-
-* {
+html {
   box-sizing: border-box;
 }
 
-/*Set body as a flex and align its content in column; set body's min-height to take all space of viewport*/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/*
+===============================================================================
+=== generic styles
+===============================================================================
+ */
+
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: var(--sans);
+  background-color: var(--black);
+  color: var(--cultured);
+  font-size: var(--font-size);
 }
 
-img.page-logo {
-  height: var(--page-logo-header);
-  width: auto;
+h1,
+h2,
+h3 {
+  margin: 0;
 }
 
-/*Make header a flex*/
+a {
+  color: var(--orange);
+}
+
+a:hover {
+  color: var(--yellow);
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+/*
+===============================================================================
+=== background color divs 
+===============================================================================
+ */
+
+.gradient {
+  background: linear-gradient(90deg, var(--black) 0%, var(--go-blue) 100%);
+  height: 2px;
+}
+
+/*
+===============================================================================
+=== header
+===============================================================================
+ */
+
 .page-header {
   display: flex;
   width: 100%;
+  /* justify-content: space-between; */
   align-items: center;
-  border-bottom: solid Gainsboro;
-  margin-bottom: 10px;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  padding: 1rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
 }
 
-/*Set flex properties to header image and navigation flexboxes*/
-.page-header__item {
-  flex: 0 1 200px;
-}
-
-/*Add an ability to grow to navigation bar and align text to the right*/
-.page-header__item:last-child {
-  flex-grow: 1;
-  text-align: right;
-}
-
-/*Change navigation from column to row by inserting inline-flex value into parent header flexbox; remove list dots and add margin to the right*/
-.navigation-list {
-  display: inline-flex;
-  margin-right: 20px;
-  list-style-type: none;
-}
-
-/*Align navigation list items*/
-.navigation-list__item {
-  display: inline-block;
-  margin-left: 15px;
-}
-
-/*Create a FlexBox for profile block and style it*/
-.profile {
-  display: flex;
-  max-width: 700px;
-  margin: 0 auto;
-  justify-content: center;
-  border: solid var(--content-border-color);
-  border-radius: 20px;
-  padding: 10px;
-}
-
-/*Edit profile__portrait, make it round*/
-.profile__portrait {
-  display: inline-block;
-  width: 200px;
-  height: fit-content;
-  margin-right: 50px;
-  border-radius: 50%;
-}
-
-/* Make profile-text a block in a Flexbox parent*/
-.profile-text {
-  display: inline-block;
-}
-
-/*Align footer in column and set margin-top for it to always stay at the bottom of the page (works because of 100vh in the body)*/
-.page-footer {
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-  background-color: var(--footer-color);
-  margin-top: auto;
-}
-
-/*Styling about.html page*/
-.header-tag {
-  margin-left: 20px;
-}
-
-.about-container {
-  display: flex;
-  max-width: 700px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 10px auto;
-  border: solid var(--content-border-color);
-  border-radius: 20px;
-  flex: 0 1 700px;
-}
-
-.about-text {
-  display: inline-block;
-  text-align: justify;
-  max-width: 300px;
-  margin-right: 20px;
-}
-
-.about-table {
-  display: flex;
-  align-self: flex-end;
-  max-width: 300px;
-
-}
-
-/*Add styling to the table*/
-table, th, td {
-  border: 1px solid var(--content-border-color);
-  border-radius: 3px;
-  margin-bottom: 10px;
-}
-
-table {
-  border: 1px solid var(--content-border-color);
-  border-radius: 5px;
-}
-
-.enjoy-list {
+.page-header a {
+  color: var(--cultured);
   display: block;
-  margin: 0px 0px 20px 20px;
 }
 
-/*Align contact page*/
-.contact-page-container {
+.page-header svg {
+  display: block;
+  color: var(--go-blue);
+  width: 24px;
+  height: 24px;
+}
+
+.page-header a:hover,
+.page-header svg:hover {
+  color: var(--orange);
+}
+
+.page-header__logo {
+  display: flex;
+  align-items: center;
+  font-family: var(--sans);
+}
+
+.page-header__logo a {
+  text-decoration: none;
+}
+
+.page-header__logo img {
+  display: block;
+  width: 48px;
+  margin-right: 0.5rem;
+}
+
+/*
+===============================================================================
+=== navigation
+===============================================================================
+ */
+
+.navbar {
+  display: none;
+  flex-flow: column wrap;
+  align-items: flex-end;
+  flex: 1 0 100%;
+  gap: 2rem;
+}
+
+.navbar--mobile {
+  display: flex;
+}
+
+.navigation-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
   display: flex;
   flex-direction: column;
-  max-width: 700px;
-  align-items: flex-start;
-  margin-left: 20px;
+  gap: 1.5rem;
 }
 
-/*Set the grid for Work page content*/
-.project-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin: 10px;
-  grid-gap: 20px;
+.navigation-list__item {
+  text-decoration: none;
+  font-size: 1rem;
 }
 
-/*Add styling to grid*/
-.project-grid__item {
-  padding: 10px;
-  background-color: var(--grid-color);
+.navigation-list__item--active {
+  text-decoration: underline;
+}
+
+.navigation-list__item--active:hover {
+  text-decoration: underline;
+}
+
+.button {
+  background-color: var(--orange);
+  color: var(--cultured);
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: var(--mono);
+  transition: background-color 1s;
+}
+
+.button:hover {
+  color: var(--cultured);
+  background-color: var(--yellow);
+}
+
+.hamburger-button {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.hamburger-button__bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease;
   border-radius: 3px;
+  background-color: var(--go-blue);
 }
 
-/*Move grid last item to the right of the grid*/
-.project-grid__item:last-child {
-  grid-column: 3 / 3;
-  grid-row: 1 / 3;
+.hamburger-button.active .hamburger-button__bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-button.active .hamburger-button__bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger-button.active .hamburger-button__bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
-/*Apply animation to svg town*/
-.sun {
-  animation: 4s color-change infinite alternate linear;
+/*
+===============================================================================
+=== intro styles
+===============================================================================
+ */
+
+#intro {
+  padding: 3rem 1rem 6rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.cloud-front {
-  animation: 30s cloud-move infinite alternate linear;
+#intro p {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-.cloud-back {
-  animation: 35s cloud-move-reverse infinite alternate linear;
+#intro .name {
+  font-family: var(--mono);
+  font-size: 1rem;
 }
 
-@keyframes color-change {
-  0% {
-    fill: #edc655;
-  }
-  50% {
-    fill: #fcffad;
-  }
-  100% {
-    fill: #f76414;
-  }
+.name span {
+  font-family: var(--sans);
+  font-size: 3rem;
+  color: var(--go-blue);
+  display: block;
+  font-weight: 300;
 }
 
-@keyframes cloud-move {
+#intro h2 {
+  font-size: 2rem;
+}
+
+/*
+===============================================================================
+=== projects section
+===============================================================================
+ */
+
+#projects {
+  padding: 4rem 1rem;
+}
+
+#projects h2 {
+  font-size: 2rem;
+  margin-bottom: calc(2.5rem * 1.5);
+}
+
+#projects h3 {
+  color: var(--go-blue);
+}
+
+#projects h4 {
+  font-size: 1rem;
+  font-family: var(--mono);
+  margin: 0;
+}
+
+.blackbox {
+  padding: 1rem;
+  border-radius: 10px;
+  color: var(--cultured);
+  background-color: var(--gunmetal);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#projects ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+#projects img {
+  margin: 2rem 0 4rem 0;
+  padding: 1rem;
+  border-left: 1px solid var(--go-blue);
+  border-top: 1px solid var(--go-blue);
+  border-radius: 25px;
+}
+
+/*
+===============================================================================
+=== contact section
+===============================================================================
+ */
+
+input,
+textarea {
+  border-radius: 30px;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.8rem 1.1rem;
+  margin-top: 0.8rem;
+  outline: none;
+  border: none;
+  background-color: var(--color-grey-5);
+  width: 100%;
+  color: var(--cultured);
+  resize: none;
+}
+
+.button-contact,
+.button-contact:link,
+.button-contact:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  border: 1px solid var(--go-blue);
+  background-color: var(--black);
+  color: inherit;
+  transition: background-color 1s;
+  margin-right: auto;
+}
+
+.button-contact:hover,
+.button-contact:focus {
+  cursor: pointer;
+  background-color: var(--go-blue);
+}
+
+#contact {
+  padding: 4rem 1rem;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: calc(2.5rem * 1.5);
+}
+
+#contact h3 {
+  color: var(--go-blue);
+}
+
+#contact h4 {
+  font-size: 1rem;
+  font-family: var(--mono);
+  margin: 0;
+}
+
+#contact ul {
+  list-style-type: none;
+  padding: 1rem 0;
+  margin: 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+#contact form {
+  padding: 1rem 0;
+  display: flex;
+  flex-flow: column wrap;
+  flex: 1 1 300px;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  max-width: 850px;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-left: 1rem;
+}
+
+/*
+===============================================================================
+=== footer section
+===============================================================================
+ */
+
+footer {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 3rem;
+}
+
+footer svg {
+  width: 48px;
+  height: 48px;
+}
+
+/*
+===============================================================================
+=== slide-show
+===============================================================================
+ */
+
+.mySlides {
+  display: none;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  /* max-width: 1000px; */
+  /* position: relative; */
+  margin: auto;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 3.5s;
+}
+
+@keyframes fade {
   from {
-    transform: translate(0, 50px);
+    opacity: 0.4;
   }
   to {
-    transform: translate(200px, 50px)
+    opacity: 1;
   }
 }
 
-@keyframes cloud-move-reverse {
-  from {
-    transform: translate(446px, 48px);
+/*
+===============================================================================
+=== media queries
+===============================================================================
+ */
+
+@media (min-width: 412px) {
+  .page-header {
+    font-size: 1rem;
   }
-  to {
-    transform: translate(100px, 48px);
+
+  .name span {
+    font-size: 4rem;
+  }
+
+  #intro h2 {
+    font-size: 3rem;
+  }
+
+  #projects h2 {
+    font-size: 2.5rem;
   }
 }
 
-/*Style content for smaller screens*/
-@media all and (max-width: 500px) {
-  .project-grid {
-    grid-template-columns: 1fr;
+@media (min-width: 850px) {
+  .page-header {
+    max-width: 1200px;
+    margin: 0 auto;
   }
+
+  .page-header__logo {
+    padding-top: 0;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    flex: auto;
+  }
+
+  .hamburger-button {
+    display: none;
+  }
+
   .navigation-list {
-    display: inline-flex;
-    flex-direction: column;
-    align-items:flex-start;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  article {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+  }
+  #projects,
+  #contact {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  #projects img {
+    grid-column: 1/6;
+    grid-row: 1/2;
+  }
+
+  #projects .slideshow-container {
+    grid-column: 1/6;
+    grid-row: 1/2;
+  }
+
+  .text {
+    grid-column: 5/11;
+    grid-row: 1/2;
+    order: 2;
+    text-align: right;
+    z-index: 100;
+  }
+  #projects ul {
+    justify-content: flex-end;
+  }
+  #projects .reverse .text {
+    grid-column: 1/7;
+    order: 2;
+    text-align: left;
+  }
+  #projects .reverse img {
+    grid-column: 6/11;
+    grid-row: 1/2;
+  }
+  #projects .reverse ul {
+    justify-content: flex-start;
   }
 }
 
-@media all and (min-width: 500px) and (max-width: 750px) {
-  .project-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media all and (max-width: 750px) {
-  .project-grid {
-    grid-gap: 10px;
-  }
-  .project-grid__item:last-child {
-    grid-column: auto / auto;
-    grid-row: auto / auto;
-  }
-  h1 {
-    font-size: 22px;
-  }
-  .about-container {
-    flex-wrap: wrap;
-    max-height: 100vh;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .about-table {
-    justify-content: center;
-  }
-}
