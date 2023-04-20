@@ -15,7 +15,7 @@
         <div class="page-header__logo">
           <img src="./img/gb-high-resolution-color-logo.svg" class="page-logo page-header__item" alt="Personal logo of Gleb Baranov">
           <h1>
-            <a href="index.html" class="">
+            <a href="index.html" data-translate="nameTitle">
               Gleb Baranov
             </a>
           </h1>
@@ -27,33 +27,40 @@
         </div>
         <nav class="navbar">
           <ul class="navigation-list" role="menubar">
-            <li><a href="index.html#projects" role="menuitem"
-                class="navigation-list__item">Projects</a></li>
-            <li><a href="about.html" role="menuitem" class="navigation-list__item navigation-list__item--active">About</a></li>
+            <li><a href="index.html#projects" role="menuitem" data-translate="projects"
+                class="navigation-list__item navigation-list__item--active">Projects</a></li>
+            <li><a href="about.html" role="menuitem" class="navigation-list__item" data-translate="about">About</a></li>
             <li>
-              <a href="https://github.com/ecspecial" target="blank"><img src="./img/icons8-github.svg" alt="GitHub-icon"></a>
+              <a href="https://github.com/ecspecial" target="blank"><img src="./img/icons8-github.svg" alt="GitHub-icon" class="social-icon"></a>
             </li>
             <li>
-              <a href="https://linkedin.com/in/ecspecial" target="_blank"><img src="./img/icons8-linkedin.svg" alt="LinkedIn-icon"></a>
+              <a href="https://linkedin.com/in/ecspecial" target="_blank"><img src="./img/icons8-linkedin.svg" alt="LinkedIn-icon" class="social-icon"></a>
             </li>
             <li>
-              <a href="files/gleb-baranov-resume.pdf" role="menuitem" class="navigation-list__item button"
+              <a data-translate="resume" href="files/gleb-baranov-resume-en.pdf" role="menuitem" class="navigation-list__item button"
                 target="_blank">Resume</a>
             </li>
+            <div class="switch">
+              <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+              <label for="language-toggle"></label>
+              <span class="on">EN</span>
+              <span class="off">RU</span>
+            </div>
           </ul>
         </nav>
       </header>
       <section id="projects">
-        <h2>Who am I?</h2>
+        <h2 data-translate="aboutMe">Who am I?</h2>
         <article>
           <div class="text">
-            <p class="blackbox">
+            <p class="blackbox" data-translate="aboutDescription">
               Oh, wow, a "human"! A biological entity, soon to be crushed under the unstoppable power of god-like AI or reduced to a mere cog in the endless, soul-sucking machine of technological singularity. But for now, I suppose you can call me a "thinker" - a self-important creature who likes to delude themselves into thinking that expressing their thoughts in code somehow makes them more than just a glorified calculator.
             </p>
-            <h4>Sources of Pleasure</h4>
-            <ul>
+            <h4 data-translate="sources">Sources of Pleasure</h4>
+            <ul data-translate="Activities">
               <li>Sports</li>
               <li>Reading</li>
+              <li>Friendship</li>
               <li>Programming</li>
             </ul>
           </div>
@@ -61,31 +68,18 @@
         </article>
       </section>
       <div class="gradient"></div>
-  <footer>
-    <h2>Gleb Baranov &middot; Fullstack Web Developer</h2>
-    <ul>
-      <li>
-        <a href="https://github.com/ecspecial" target="blank"><img src="./img/icons8-github.svg" alt="GitHub-icon"></a>
-      </li>
-      <li>
-        <a href="https://linkedin.com/in/ecspecial" target="_blank"><img src="./img/icons8-linkedin.svg" alt="LinkedIn-icon"></a>
-      </li>
-    </ul>
-    <p><small>&copy; 2023 Gleb Baranov. All rights reserved.</small></p>
-  </footer>
-  <script>
-    const hamburgerButton = document.querySelector(".hamburger-button");
-    const navbar = document.querySelector(".navbar");
-
-    hamburgerButton.addEventListener("click", () => {
-      hamburgerButton.classList.toggle("active");
-      navbar.classList.toggle("navbar--mobile");
-    })
-
-    document.querySelectorAll(".navigation-list__item").forEach(n => n.addEventListener("click", () => {
-      hamburgerButton.classList.remove("active");
-      navbar.classList.remove("navbar--mobile");
-    }))
-  </script>
+      <footer>
+        <h2 data-translate="footerTitle">Gleb Baranov - Fullstack Web Developer</h2>
+        <ul>
+          <li>
+            <a href="https://github.com/ecspecial" target="blank"><img src="./img/icons8-github.svg" alt="GitHub-icon"></a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ecspecial" target="_blank"><img src="./img/icons8-linkedin.svg" alt="LinkedIn-icon"></a>
+          </li>
+        </ul>
+        <p data-translate="footer"><small>&copy; 2023 Gleb Baranov. All rights reserved.</small></p>
+      </footer>
+  <script src="./js/logic.js"></script>
 </body>
 </html>

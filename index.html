@@ -15,7 +15,7 @@
         <div class="page-header__logo">
           <img src="./img/gb-high-resolution-color-logo.svg" class="page-logo page-header__item" alt="Personal logo of Gleb Baranov">
           <h1>
-            <a href="index.html" class="">
+            <a href="index.html" data-translate="nameTitle">
               Gleb Baranov
             </a>
           </h1>
@@ -27,36 +27,42 @@
         </div>
         <nav class="navbar">
           <ul class="navigation-list" role="menubar">
-            <li><a href="index.html#projects" role="menuitem"
+            <li><a href="index.html#projects" role="menuitem" data-translate="projects"
                 class="navigation-list__item navigation-list__item--active">Projects</a></li>
-            <li><a href="about.html" role="menuitem" class="navigation-list__item">About</a></li>
+            <li><a href="about.html" role="menuitem" class="navigation-list__item" data-translate="about">About</a></li>
             <li>
-              <a href="https://github.com/ecspecial" target="blank"><img src="./img/icons8-github.svg" alt="GitHub-icon"></a>
+              <a href="https://github.com/ecspecial" target="blank"><img src="./img/icons8-github.svg" alt="GitHub-icon" class="social-icon"></a>
             </li>
             <li>
-              <a href="https://linkedin.com/in/ecspecial" target="_blank"><img src="./img/icons8-linkedin.svg" alt="LinkedIn-icon"></a>
+              <a href="https://linkedin.com/in/ecspecial" target="_blank"><img src="./img/icons8-linkedin.svg" alt="LinkedIn-icon" class="social-icon"></a>
             </li>
             <li>
-              <a href="files/gleb-baranov-resume.pdf" role="menuitem" class="navigation-list__item button"
+              <a data-translate="resume" href="files/gleb-baranov-resume-en.pdf" role="menuitem" class="navigation-list__item button"
                 target="_blank">Resume</a>
             </li>
+            <div class="switch">
+              <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+              <label for="language-toggle"></label>
+              <span class="on">EN</span>
+              <span class="off">RU</span>
+            </div>
           </ul>
         </nav>
       </header>
       <section id="intro">
-        <p class="name">Hi, my name is <span>Gleb Baranov.</span></p>
-        <h2>I am a Full-Stack Web Debeloper.</h2>
-        <p>
+        <p class="name" data-translate="hello">Hi, my name is <span data-translate="nameTitle">Gleb Baranov.</span></p>
+        <h2 data-translate="fullStack">I am a Full-Stack Web Debeloper.</h2>
+        <p data-translate="processCF">
           I am in prosecc of finishing my <a href="https://careerfoundry.com/en/courses/become-a-web-developer/" target="_blank">CareerFoundry</a> Full-Stack Web Development Program.
         </p>
       </section>
       <section id="projects">
-        <h2>My Web Application Portfolio</h2>
+        <h2 data-translate="portfolio">My Web Application Portfolio</h2>
         <article>
           <div class="text">
-            <h4>Simple Web App</h4>
+            <h4 data-translate="simple">Simple Web App</h4>
             <h3>Pokedex</h3>
-            <p class="blackbox">
+            <p class="blackbox" data-translate="simpleDescription">
               A small web application with HTML, CSS, and JavaScript that loads Pokemon's data from an external
               <a href="https://pokeapi.co/docs/v2">API</a> and enables the viewing of data points in detail. This site was
               built using <a href="
@@ -64,7 +70,7 @@
                 href="https://ecspecial.github.io/pokedex/">Pokedex</a>. The purpose of this app is to showcase an ability to create a 
                 solid JavaScript app architecture and to demonstrate skills in testing and debugging code.
             </p>
-            <h4>Technologies used include:</h4>
+            <h4 data-translate="techStack">Technologies used include:</h4>
             <ul>
               <li>HTML</li>
               <li>CSS</li>
@@ -76,15 +82,15 @@
         </article>
         <article class="reverse">
           <div class="text">
-            <h4>Server Side API</h4>
+            <h4 data-translate="serverApi">Server Side API</h4>
             <h3>MyFlix</h3>
-            <p class="blackbox">
+            <p class="blackbox" data-translate="serverApiDescription">
               MyFlix web application provides users with access to information about movies, directors, and genres. 
               Users can sign up, update their personal information, and create a list of their favorite movies. 
               The server-side component of MyFlix is a REST API built to showcase skills in creating solid API architectures. 
               API documentation is available at <a href="https://github.com/ecspecial/Movie_API#readme">Github</a>.
             </p>
-            <h4>Technologies used include:</h4>
+            <h4 data-translate="techStack">Technologies used include:</h4>
             <ul>
               <li>HTML</li>
               <li>CSS</li>
@@ -98,15 +104,15 @@
         </article>
         <article>
           <div class="text">
-            <h4>Client Side Component</h4>
+            <h4 data-translate="clientSide">Client Side Component</h4>
             <h3>MyFlix</h3>
-            <p class="blackbox">
+            <p class="blackbox" data-translate="clientSideDescription">
               MyFlix client-side component is a single-page, responsive app built with React and Redux for state management. 
               The app features routing, rich interactions, and a polished user experience. 
               It supports existing server-side component by facilitating user requests and rendering the response from the server-side via a number of different interface views.
               Code is available at <a href="https://github.com/ecspecial/myFlix-client">Github</a>. <a href="https://github.com/ecspecial/myFlix-client">Live demo</a> can be accessed as well.
             </p>
-            <h4>Technologies used include:</h4>
+            <h4 data-translate="techStack">Technologies used include:</h4>
             <ul>
               <li>HTML</li>
               <li>CSS</li>
@@ -119,14 +125,14 @@
         </article>
         <article class="reverse">
           <div class="text">
-            <h4>Progressive Web App</h4>
+            <h4 data-translate="pwa">Progressive Web App</h4>
             <h3>PWA</h3>
-            <p class="blackbox">
+            <p class="blackbox" data-translate="pwaDescription">
               PWA is a serverless, progressive web application built with React and developed using a test-driven development (TDD) technique. 
               The app uses the Google Calendar API and AWS Lambda for authorization server instead of using a traditional server to fetch upcoming full-stack meetup events. 
               Code is available at <a href="https://github.com/ecspecial/meet">Github</a>. <a href="https://ecspecial.github.io/meet/">Live demo</a> can be accessed as well.
             </p>
-            <h4>Technologies used include:</h4>
+            <h4 data-translate="techStack">Technologies used include:</h4>
             <ul>
               <li>React</li>
               <li>Oauth2</li>
@@ -141,12 +147,12 @@
         </article>
         <article>
           <div class="text">
-            <h4>React Native App</h4>
+            <h4 data-translate="native">React Native App</h4>
             <h3>Chat App</h3>
-            <p class="blackbox">
-              Chat App is a JavaScript app built with React NativeThe app offers various features, including message exchange, image sharing, and location sharing.
+            <p class="blackbox" data-translate="nativeDescription">
+              Chat App is a JavaScript app built with React NativeThe app offers various features, including message exchange, image sharing, and location sharing. Code is available at <a href="https://github.com/ecspecial/chat-app">Github</a>
             </p>
-            <h4>Technologies used include:</h4>
+            <h4 data-translate="techStack">Technologies used include:</h4>
             <ul>
               <li>React Native</li>
               <li>Expo</li>
@@ -158,12 +164,12 @@
         </article>
         <article class="reverse">
           <div class="text">
-            <h4>Angular App</h4>
+            <h4 data-translate="angular">Angular App</h4>
             <h3>Quiz</h3>
-            <p class="blackbox">
+            <p class="blackbox" data-translate="angularDescription">
               A JavaScript quiz app built with Angular. Comming soon ...
             </p>
-            <h4>Technologies used include:</h4>
+            <h4 data-translate="techStack">Technologies used include:</h4>
             <ul>
               <li>HTML</li>
               <li>CSS</li>
@@ -175,12 +181,12 @@
         </article>
         <article>
           <div class="text">
-            <h4>Database creation with Python</h4>
-            <h3>Recipe App</h3>
-            <p class="blackbox">
+            <h4 data-translate="python">Database creation with Python</h4>
+            <h3 data-translate="recipe">Recipe App</h3>
+            <p class="blackbox" data-translate="pythonDescription">
               Using Python to create a database for the recipe app. Comming soon ...
             </p>
-            <h4>Technologies used include:</h4>
+            <h4 data-translate="techStack">Technologies used include:</h4>
             <ul>
               <li>Python</li>
             </ul>
@@ -189,15 +195,15 @@
         </article>
         <article class="reverse">
           <div class="text">
-            <h4>Python Web Application</h4>
-            <h3>Recipe App</h3>
-            <p class="blackbox">
+            <h4 data-translate="pythonApp">Python Web Application</h4>
+            <h3 data-translate="recipe">Recipe App</h3>
+            <p class="blackbox" data-translate="pythonAppDescription">
               Create models, views, and templates for the recipe app with Django’s MVT architecture. Manage different
               functionalities of the application with Django admin panel. Use Django’s authentication feature to provide
               authentication. Data analysis and visualization with QuerySet API and Python’s matplotlib library. Comming
               soon ...
             </p>
-            <h4>Technologies used include:</h4>
+            <h4 data-translate="techStack">Technologies used include:</h4>
             <ul>
               <li>Python</li>
               <li>Django</li>
@@ -208,7 +214,7 @@
       </section>
       <div class="gradient"></div>
   <footer>
-    <h2>Gleb Baranov &middot; Fullstack Web Developer</h2>
+    <h2 data-translate="footerTitle">Gleb Baranov - Fullstack Web Developer</h2>
     <ul>
       <li>
         <a href="https://github.com/ecspecial" target="blank"><img src="./img/icons8-github.svg" alt="GitHub-icon"></a>
@@ -217,21 +223,8 @@
         <a href="https://linkedin.com/in/ecspecial" target="_blank"><img src="./img/icons8-linkedin.svg" alt="LinkedIn-icon"></a>
       </li>
     </ul>
-    <p><small>&copy; 2023 Gleb Baranov. All rights reserved.</small></p>
+    <p data-translate="footer"><small>&copy; 2023 Gleb Baranov. All rights reserved.</small></p>
   </footer>
-  <script>
-    const hamburgerButton = document.querySelector(".hamburger-button");
-    const navbar = document.querySelector(".navbar");
-
-    hamburgerButton.addEventListener("click", () => {
-      hamburgerButton.classList.toggle("active");
-      navbar.classList.toggle("navbar--mobile");
-    })
-
-    document.querySelectorAll(".navigation-list__item").forEach(n => n.addEventListener("click", () => {
-      hamburgerButton.classList.remove("active");
-      navbar.classList.remove("navbar--mobile");
-    }))
-  </script>
+  <script src="./js/logic.js"></script>
 </body>
 </html>
