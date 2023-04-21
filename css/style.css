@@ -105,6 +105,11 @@ img {
   font-size: 0.8rem;
 }
 
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .page-header a {
   color: var(--cultured);
   display: block;
@@ -218,6 +223,11 @@ img {
   transform: translateY(-8px) rotate(-45deg);
 }
 
+.languageSwitcher {
+  display: flex;
+  align-self: flex-end;
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -230,7 +240,7 @@ img {
   pointer-events: none;
   font-family: 'Helvetica', Arial, sans-serif;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 10px;
   text-transform: uppercase;
   text-shadow: 0 1px 0 rgba(0, 0, 0, .06);
   width: 50%;
@@ -599,6 +609,11 @@ footer svg {
 
 @media (min-width: 850px) {
   .page-header {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .header-wrapper {
     max-width: 1200px;
     margin: 0 auto;
   }

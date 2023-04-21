@@ -11,43 +11,47 @@
   </head>
 
     <body>
-      <header class="page-header">
-        <div class="page-header__logo">
-          <img src="./img/gb-high-resolution-color-logo.svg" class="page-logo page-header__item" alt="Personal logo of Gleb Baranov">
-          <h1>
-            <a href="index.html" data-translate="nameTitle">
-              Gleb Baranov
-            </a>
-          </h1>
+      <header class="header-wrapper">
+        <div class="page-header">
+          <div class="page-header__logo">
+            <img src="./img/gb-high-resolution-color-logo.svg" class="page-logo page-header__item" alt="Personal logo of Gleb Baranov">
+            <h1>
+              <a href="index.html" data-translate="nameTitle">
+                Gleb Baranov
+              </a>
+            </h1>
+          </div>
+          <div class="hamburger-button">
+            <span class="hamburger-button__bar"></span>
+            <span class="hamburger-button__bar"></span>
+            <span class="hamburger-button__bar"></span>
+          </div>
+          <nav class="navbar">
+            <ul class="navigation-list" role="menubar">
+              <li><a href="index.html#projects" role="menuitem" data-translate="projects"
+                  class="navigation-list__item">Projects</a></li>
+              <li><a href="about.html" role="menuitem" class="navigation-list__item navigation-list__item--active" data-translate="about">About</a></li>
+              <li>
+                <a href="https://github.com/ecspecial" target="blank"><img src="./img/icons8-github.svg" alt="GitHub-icon" class="social-icon"></a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/ecspecial" target="_blank"><img src="./img/icons8-linkedin.svg" alt="LinkedIn-icon" class="social-icon"></a>
+              </li>
+              <li>
+                <a data-translate="resume" href="files/gleb-baranov-resume-en.pdf" role="menuitem" class="navigation-list__item button"
+                  target="_blank">Resume</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <div class="hamburger-button">
-          <span class="hamburger-button__bar"></span>
-          <span class="hamburger-button__bar"></span>
-          <span class="hamburger-button__bar"></span>
+        <div class="languageSwitcher">
+          <div class="switch">
+            <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+            <label for="language-toggle"></label>
+            <span class="on">EN</span>
+            <span class="off">RU</span>
+          </div>
         </div>
-        <nav class="navbar">
-          <ul class="navigation-list" role="menubar">
-            <li><a href="index.html#projects" role="menuitem" data-translate="projects"
-                class="navigation-list__item navigation-list__item--active">Projects</a></li>
-            <li><a href="about.html" role="menuitem" class="navigation-list__item" data-translate="about">About</a></li>
-            <li>
-              <a href="https://github.com/ecspecial" target="blank"><img src="./img/icons8-github.svg" alt="GitHub-icon" class="social-icon"></a>
-            </li>
-            <li>
-              <a href="https://linkedin.com/in/ecspecial" target="_blank"><img src="./img/icons8-linkedin.svg" alt="LinkedIn-icon" class="social-icon"></a>
-            </li>
-            <li>
-              <a data-translate="resume" href="files/gleb-baranov-resume-en.pdf" role="menuitem" class="navigation-list__item button"
-                target="_blank">Resume</a>
-            </li>
-            <div class="switch">
-              <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
-              <label for="language-toggle"></label>
-              <span class="on">EN</span>
-              <span class="off">RU</span>
-            </div>
-          </ul>
-        </nav>
       </header>
       <section id="projects">
         <h2 data-translate="aboutMe">Who am I?</h2>
