@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
       resume: "Resume",
       hello: "Hi, my name is " + `<span>Gleb Baranov.</span>`,
       fullStack: "I am a Full-Stack Web Debeloper.",
-      processCF: `I am in prosecc of finishing my <a href="https://careerfoundry.com/en/courses/become-a-web-developer/" target="_blank">CareerFoundry</a> Full-Stack Web Development Program.`,
       portfolio: "My Web Application Portfolio",
       simple: "Simple Web App",
       simpleDescription: `A small web application with HTML, CSS, and JavaScript that loads Pokemon's data from an external
@@ -94,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
       resume: "Резюме",
       hello: "Меня зовут " + `<span>Глеб Баранов.</span>`,
       fullStack: "Я Full-Stack Разработчик.",
-      processCF: `На данный момент я завершаю программу Full-Stack Web Development <a href="https://careerfoundry.com/en/courses/become-a-web-developer/" target="_blank">CareerFoundry</a>.`,
       portfolio: "Портфолио моих приложений",
       simple: "API приложение",
       simpleDescription: `Веб-приложение на HTML, CSS и JavaScript, которое загружает данные о Покемонах из внешнего <a href="https://pokeapi.co/docs/v2">API</a> и позволяет просматривать детальную информацию об их данных. Этот сайт был создан с использованием <a href="https://pages.github.com/">Github Pages</a> и может быть просмотрен здесь: <a href="https://ecspecial.github.io/pokedex/">Pokedex</a>. Цель этого приложения - продемонстрировать возможность создания прочной архитектуры JavaScript-приложения и навыки тестирования и отладки кода.`,
