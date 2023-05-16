@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       serverApi: "Server Side API",
       serverApiDescription: `MyFlix web application provides users with access to information about movies, directors, and genres. 
       Users can sign up, update their personal information, and create a list of their favorite movies. 
-      The server-side component of MyFlix is a REST API built to showcase skills in creating solid API architectures. 
+      The server-side component of MyFlix is a REST API built to showcase skills in creating solid API architectures. New <a href="https://github.com/ecspecial/movie-api-aws">release</a> of this API responsible for frontend is deployed on AWS opposing previous run on Heroku. 
       API documentation is available at <a href="https://github.com/ecspecial/Movie_API#readme">Github</a>.`,
       clientSide: "Client Side Component",
       clientSideDescription: `MyFlix client-side component is a single-page, responsive app built with React and Redux for state management. 
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
       serverApi: "API и серверная часть приложения",
       serverApiDescription: `Веб-приложение MyFlix предоставляет пользователям доступ к информации о фильмах, режиссерах и жанрах.
       Пользователи могут зарегистрироваться, обновить свою личную информацию и создать список своих любимых фильмов.
-      Серверная часть MyFlix представляет собой REST API, созданное для демонстрации навыков создания надежной архитектуры API.
+      Серверная часть MyFlix представляет собой REST API, созданное для демонстрации навыков создания надежной архитектуры API. Обновленная <a href="https://github.com/ecspecial/movie-api-aws">версия</a> API ответственная за клиентскую часть развернута с использованием AWS, заменяя Heroku.
       Документация API доступна на <a href="https://github.com/ecspecial/Movie_API#readme">Github</a>.`,
       clientSide: "Клиентская часть для приложения",
       clientSideDescription: `MyFlix - это одностраничное приложение, построенное с использованием React и Redux для управления состояниями.
